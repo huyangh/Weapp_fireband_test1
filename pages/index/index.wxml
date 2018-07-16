@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='input'>
+    <input placeholder-class='place-holder' class='inputbox' type='text' placeholder='请输入设备序列号' focus='{{focus}}' confirm-type='search' adjust-position='true' >
+    </input>
+    <view class='button' bindtap='searchSN'>
+      <image class='icon1' src='/images/icon12.png'></image>
+    </view>
+  </view>
+
+  <view class="userdata">
+    <text id='hr' class="data1">心率： {{heartrate}}BPM</text>
+    <text id='spo2' class="data2">血氧：{{spo2}}%</text>
+    <text id='loc' class="data1">经纬度：{{location}}</text>
+  </view>
+
+  <view class='map'>
+    <image class='defaultmap' src='/images/1.jpg'></image>
+  </view>
+
+  <view>
+    <text class='mapdes'>点击查看地图</text> 
+  </view>
+</view>
