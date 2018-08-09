@@ -55,7 +55,7 @@ page{
   border: 1px solid #999;
   border-radius: 5px;
   width: 600rpx;
-  height: 120px;
+  height: 240px;
   margin-top: 40px;
   text-align: center;
 }
@@ -67,21 +67,19 @@ page{
 .data2{
   line-height: 40px;
   border-top: 1px solid #999;
-  border-bottom: 1px solid #999;
-}
-
-.map{
   
-  height: 180px;
-  width: 600rpx;
-  margin-top:40px;
-}
-
-.defaultmap{
-  height: 180px;
-  width: 600rpx;
 }
 
 .mapdes{
   line-height: 40px;
+  font-weight: bold;
 }
+
+.viewmap{
+  margin-top: 40px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  width: 600rpx;
+  text-align: center;
+}
+

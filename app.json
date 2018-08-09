@@ -1,11 +1,12 @@
 {
   "pages":[
     "pages/index/index"
+ 
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Fireband_test",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
+  
 }
