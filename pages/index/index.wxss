@@ -13,6 +13,7 @@ page{
   flex-direction: row;
   border: 1px solid #666;
   border-radius: 5px;
+  
   width: 600rpx;
   height: 40px;
   vertical-align: middle;
@@ -55,8 +56,8 @@ page{
   border: 1px solid #999;
   border-radius: 5px;
   width: 600rpx;
-  height: 240px;
-  margin-top: 40px;
+  height: 200px;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -76,10 +77,20 @@ page{
 }
 
 .viewmap{
-  margin-top: 40px;
+  margin-top: 30px;
   border: 1px solid #999;
   border-radius: 5px;
   width: 600rpx;
   text-align: center;
 }
 
+.status{
+  margin-top: 30px;
+  width: 600rpx;
+  text-align: center;
+}
+
+.sta{
+  font-size: 20px;
+  color: #666;
+}

@@ -1,3 +1,4 @@
 {
-    "navigationBarTitleText": "Fireband_test"
+    "navigationBarTitleText": "Fireband_test",
+    "enablePullDownRefresh":true
 }
