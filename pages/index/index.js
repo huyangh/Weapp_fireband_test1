@@ -49,7 +49,9 @@ Page({
         SN: snlist[e.detail.value - 1]
       })
     }else{
-      
+      this.setData({
+        SN:null
+      })
     }
     
     
@@ -111,7 +113,7 @@ Page({
         // var lalbsbuf = res.data.t.items[8].numValues;
         // var hrbuf = res.data.t.items[10].numValues;
         // var spo2buf = res.data.t.items[9].numValues;
-        if (res.data.t.items[10].numValues == 0){
+        
           that.setData({
             
             batlvl: res.data.t.items[2].numValues,
@@ -123,16 +125,13 @@ Page({
             collectTime1: new Date(res.data.t.collectDate).toLocaleDateString().replace(/\//g, "-") ,
             collectTime2: new Date(res.data.t.collectDate).toTimeString().substr(0, 8),
           
-          })
-        } else if (res.data.t.items[2].numValues == 0){
-          that.setData({
             heartrate: res.data.t.items[10].numValues,
             spo2: res.data.t.items[9].numValues,
             status: res.data.t.onlineStatus,
           })
-        }
         
-        if (res.data.t.items[2].numValues != 0) {
+        
+        if (res.data.t.items[9].numValues != 0) {
           wx.showToast({
             title: '查询成功',
             icon: 'success',

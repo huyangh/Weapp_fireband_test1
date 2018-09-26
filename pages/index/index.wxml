@@ -9,8 +9,10 @@
   </view>
 
   <view class='status'>   
-    <text class= 'sta'>设备当前状态：\n{{status}}\n</text>
-    <text class= 'sta'>最后采集位置信息时间：\n{{collectTime1}} {{collectTime2}}</text>
+    <text class= 'sta'>设备当前状态\n</text>
+    <text class= 'sta1'>{{status}}\n</text>
+    <text class= 'sta'>最后采集时间\n</text>
+    <text class= 'sta1'>{{collectTime1}} {{collectTime2}}</text>
   </view>
 
   <view class="userdata">

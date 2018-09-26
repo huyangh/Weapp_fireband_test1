@@ -91,6 +91,11 @@ page{
 }
 
 .sta{
-  font-size: 20px;
+  font-size: 18px;
   color: #666;
+}
+
+.sta1{
+  font-size: 20px;
+  color: black;
 }
