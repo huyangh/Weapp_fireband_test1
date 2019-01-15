@@ -84,6 +84,14 @@ page{
   text-align: center;
 }
 
+.viewsim{
+  margin-top: 20px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  width: 600rpx;
+  text-align: center;
+}
+
 .status{
   margin-top: 30px;
   width: 600rpx;

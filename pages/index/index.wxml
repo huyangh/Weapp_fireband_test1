@@ -28,5 +28,9 @@
     <text class='mapdes'>点击查看设备位置</text> 
   </view>
 
+  <view class='viewsim' bindtap='bindViewSimTap'>
+    <text class='mapdes'>点击查看剩余流量</text> 
+  </view>
+
 </view>
 

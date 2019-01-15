@@ -35,18 +35,25 @@ Page({
     
   },
 
+  bindViewSimTap: function(){
+
+  },
+
   onLoad: function () {
     
   },
 
 
   sninput:function(e){
-    var snlist = new Array(100);
-    snlist[0] = '001221A00B80';
-    
-    if(e.detail.value <= 100 && e.detail.value >= 1){
+    var snlist = new Array(11);
+
+    snlist[0] = '001221B00EBB';
+    snlist[1] = '001221B00EB1';
+    snlist[2] = '001221B00EAF';
+
+    if(e.detail.value <= 100 && e.detail.value >= 0){
       this.setData({
-        SN: snlist[e.detail.value - 1]
+        SN: snlist[e.detail.value]
       })
     }else{
       this.setData({
