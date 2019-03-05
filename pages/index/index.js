@@ -5,18 +5,18 @@ const app = getApp()
 
 Page({
   data: {
-    heartrate:'',
-    spo2:'',
+    heartrate:0,
+    spo2:0,
     lo_gps:0,
     lo_lbs:0,
     la_gps:0,
     la_lbs:0,
-    batlvl:'',
-    signal:'',
+    batlvl:0,
     SN:'',
     status:'',
-    collectTime1:'',
-    collectTime2: '',
+    time1:'',
+    time2: '',
+    devicenum:''
 
   },
   
@@ -36,7 +36,7 @@ Page({
   },
 
   bindViewSimTap: function(){
-
+    console.log("SIM view");
   },
 
   onLoad: function () {
@@ -65,7 +65,7 @@ Page({
   },
 
   searchSN:function(){
-    console.log("button tap");
+    console.log("Search SN");
     if(this.data.SN != null){
       console.log("SN:" + this.data.SN);
       var that = this;  
@@ -129,12 +129,13 @@ Page({
             lo_lbs: res.data.t.items[7].numValues,
             la_lbs: res.data.t.items[8].numValues,
             
-            collectTime1: new Date(res.data.t.collectDate).toLocaleDateString().replace(/\//g, "-") ,
-            collectTime2: new Date(res.data.t.collectDate).toTimeString().substr(0, 8),
+            time1: new Date(res.data.t.collectDate).toLocaleDateString().replace(/\//g, "-") ,
+            time2: new Date(res.data.t.collectDate).toTimeString().substr(0, 8),
           
             heartrate: res.data.t.items[10].numValues,
             spo2: res.data.t.items[9].numValues,
             status: res.data.t.onlineStatus,
+            devicenum:res.data.t.deviceNum
           })
         
         
@@ -161,9 +162,9 @@ Page({
 
       return {
 
-        title: 'Fireband',
+        title: 'Fireband_test',
 
-        desc: '查看手环信息',
+        desc: 'Fireband手环信息查看工具',
 
         path: '/index/index'
 

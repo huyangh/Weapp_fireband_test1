@@ -1,7 +1,6 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/siminfo/siminfo"
+    "pages/index/index"
  
   ],
   "window": {
@@ -9,5 +8,6 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTextStyle": "black"
   }
+  
   
 }

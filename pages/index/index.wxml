@@ -1,11 +1,16 @@
 <!--index.wxml-->
 <view class="container">
+  
   <view class='input'>
-    <input placeholder-class='place-holder' class='inputbox' type='text' placeholder='请输入设备编号(1-100)' auto-focus='true' confirm-type='search' adjust-position='true' bindinput='sninput'>
+    <input placeholder-class='place-holder' class='inputbox' type='text' placeholder='请输入设备编号(1-10)' auto-focus='true' confirm-type='search' adjust-position='true' bindinput='sninput'>
     </input>
-    <view class='button' bindtap='searchSN'>
+    <!-- <view class='button' bindtap='searchSN'>
       <image class='icon1' src='/images/icon12.png'></image>
-    </view>
+    </view> -->
+  </view>
+
+  <view class='button1' bindtap='searchSN'>
+    <text class='searchdes'>查询设备信息</text> 
   </view>
 
   <view class='status'>   
@@ -16,21 +21,21 @@
   </view>
 
   <view class="userdata">
-    <text id='hr' class="data1">心率： {{heartrate}}</text>
-    <text id='spo2' class="data2">血氧：{{spo2}}%</text>
+    <text id='hr' class="data1">心率： {{heartrate}} BPM</text>
+    <text id='spo2' class="data2">血氧：{{spo2}} %</text>
     <text id='lo' class="data2">经度：{{lo_gps==0? lo_lbs: lo_gps}}</text>
     <text id='la' class="data2">纬度：{{la_gps==0? la_lbs: la_gps}}</text>
-    <text id='batt' class="data2">电量百分比：{{batlvl}}%</text>
+    <text id='batt' class="data2">电量：{{batlvl}} %</text>
     
   </view>
 
   <view class='viewmap' bindtap='bindViewTap'>
-    <text class='mapdes'>点击查看设备位置</text> 
+    <text class='mapdes'>查看设备位置</text> 
   </view>
 
-  <view class='viewsim' bindtap='bindViewSimTap'>
-    <text class='mapdes'>点击查看剩余流量</text> 
-  </view>
+  <!-- <view class='viewsim' bindtap='bindViewSimTap'>
+    <text class='mapdes'>点击查看SIM卡信息</text> 
+  </view> -->
 
 </view>
 
