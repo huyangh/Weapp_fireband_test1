@@ -1,4 +1,3 @@
-
 var util = require('../../utils/util.js')
 
 const app = getApp()
@@ -15,9 +14,7 @@ Page({
     SN:'',
     status:'',
     time1:'',
-    time2: '',
-    devicenum:''
-
+    time2:''
   },
   
   bindViewTap: function() {
@@ -32,26 +29,28 @@ Page({
         latitude: this.data.la_lbs
       })
     }
-    
-  },
-
-  bindViewSimTap: function(){
-    console.log("SIM view");
   },
 
   onLoad: function () {
     
   },
 
-
   sninput:function(e){
     var snlist = new Array(11);
 
-    snlist[0] = '001221B00EBB';
-    snlist[1] = '001221B00EB1';
-    snlist[2] = '001221B00EAF';
+    snlist[0] = '001221A00B80';
+    snlist[1] = '001221B00EBB';
+    snlist[2] = '001221B00EB5';
+    snlist[3] = '001221B00EBD';
+    snlist[4] = '001221B00EC0';
+    snlist[5] = '001221B00EB5';
+    snlist[6] = '001221B00EB5';
+    snlist[7] = '001221B00EB5';
+    snlist[8] = '001221B00EB5';
+    snlist[9] = '001221B00EB5';
+    snlist[10] = '001221B00EB5';
 
-    if(e.detail.value <= 100 && e.detail.value >= 0){
+    if(e.detail.value <= 10 && e.detail.value >= 0){
       this.setData({
         SN: snlist[e.detail.value]
       })
@@ -60,12 +59,9 @@ Page({
         SN:null
       })
     }
-    
-    
   },
 
   searchSN:function(){
-    console.log("Search SN");
     if(this.data.SN != null){
       console.log("SN:" + this.data.SN);
       var that = this;  
@@ -85,7 +81,8 @@ Page({
           that.getdata(res.data.token);
         }
       })
-    }else{
+    }
+    else{
       wx.showToast({
         title: '请重新输入正确的设备编号',
         icon: 'none',
@@ -93,7 +90,6 @@ Page({
       })
     }
   },
-
 
   getdata: function (token) {
     // 获取数据
@@ -110,37 +106,26 @@ Page({
         'token': token
       },
       success: function (res) {
-      
-        console.log(res.data.t)
+        console.log(res.data.t);
+        console.log(res.data.t.collectDate);
+        var timestamp = Date.parse(new Date());
+        timestamp = timestamp / 1000;
 
-        // var batbuf = res.data.t.items[2].numValues;
-        // var logpsbuf = res.data.t.items[5].numValues;
-        // var lagpsbuf = res.data.t.items[6].numValues;
-        // var lolbsbuf = res.data.t.items[7].numValues;
-        // var lalbsbuf = res.data.t.items[8].numValues;
-        // var hrbuf = res.data.t.items[10].numValues;
-        // var spo2buf = res.data.t.items[9].numValues;
-        
-          that.setData({
-            
-            batlvl: res.data.t.items[2].numValues,
-            lo_gps: res.data.t.items[5].numValues,
-            la_gps: res.data.t.items[6].numValues,
-            lo_lbs: res.data.t.items[7].numValues,
-            la_lbs: res.data.t.items[8].numValues,
-            
-            time1: new Date(res.data.t.collectDate).toLocaleDateString().replace(/\//g, "-") ,
-            time2: new Date(res.data.t.collectDate).toTimeString().substr(0, 8),
+        that.setData({
+          status: res.data.t.onlineStatus,
+          time1: util.formatTimeTwo(timestamp, 'Y/M/D h:m:s'),
+          heartrate: res.data.t.items[10].numValues,
+          spo2: res.data.t.items[9].numValues,          
+          lo_gps: res.data.t.items[5].numValues,
+          la_gps: res.data.t.items[6].numValues,
+          lo_lbs: res.data.t.items[7].numValues,
+          la_lbs: res.data.t.items[8].numValues,
+          batlvl: res.data.t.items[2].numValues,
           
-            heartrate: res.data.t.items[10].numValues,
-            spo2: res.data.t.items[9].numValues,
-            status: res.data.t.onlineStatus,
-            devicenum:res.data.t.deviceNum
-          })
-        
+        })
         
         if (res.data.t.items[9].numValues != 0) {
-          wx.showToast({
+            wx.showToast({
             title: '查询成功',
             icon: 'success',
             duration: 2000
@@ -161,16 +146,11 @@ Page({
   onShareAppMessage: function () {
 
       return {
-
         title: 'Fireband_test',
-
         desc: 'Fireband手环信息查看工具',
-
         path: '/index/index'
-
       }
-
-    },
+  },
 
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh();

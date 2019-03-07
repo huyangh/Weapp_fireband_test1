@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
-	"appid": "touristappid",
-	"projectname": "test1",
+	"appid": "wx0d3287e26b8bb34b",
+	"projectname": "test123",
 	"condition": {
 		"search": {
 			"current": -1,
