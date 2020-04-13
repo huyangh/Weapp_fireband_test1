@@ -12,7 +12,7 @@
 
   <view class='status'>   
     <text class= 'sta'>当前状态\n</text>
-    <text class= 'sta1'>{{status}}\n</text>
+    <text class= 'sta1'>{{status}}\n\n</text>
     <text class= 'sta'>查询时间\n</text>
     <text class= 'sta1'>{{time1}}</text>
   </view>

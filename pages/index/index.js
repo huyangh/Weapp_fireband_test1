@@ -42,13 +42,13 @@ Page({
     snlist[1] = '001221B00EBB';
     snlist[2] = '001221B00EB5';
     snlist[3] = '001221B00EBD';
-    snlist[4] = '001221B00EC0';
-    snlist[5] = '001221B00EB5';
-    snlist[6] = '001221B00EB5';
-    snlist[7] = '001221B00EB5';
-    snlist[8] = '001221B00EB5';
-    snlist[9] = '001221B00EB5';
-    snlist[10] = '001221B00EB5';
+    snlist[4] = '001221B00EBE';
+    snlist[5] = '001221B00EC0';
+    snlist[6] = '001221B00EAD';
+    snlist[7] = '001221B00EB3';
+    snlist[8] = '001221B00EB4';
+    snlist[9] = '001221B00EB6';
+    snlist[10] = '001221B00EB7';
 
     if(e.detail.value <= 10 && e.detail.value >= 0){
       this.setData({
@@ -114,14 +114,19 @@ Page({
         that.setData({
           status: res.data.t.onlineStatus,
           time1: util.formatTimeTwo(timestamp, 'Y/M/D h:m:s'),
-          heartrate: res.data.t.items[10].numValues,
-          spo2: res.data.t.items[9].numValues,          
-          lo_gps: res.data.t.items[5].numValues,
-          la_gps: res.data.t.items[6].numValues,
-          lo_lbs: res.data.t.items[7].numValues,
-          la_lbs: res.data.t.items[8].numValues,
-          batlvl: res.data.t.items[2].numValues,
+          heartrate: res.data.t.items[5].numValues,
+          spo2: res.data.t.items[7].numValues,          
+          lo_gps: res.data.t.items[1].numValues,
+          la_gps: res.data.t.items[0].numValues,
+          lo_lbs: res.data.t.items[3].numValues,
+          la_lbs: res.data.t.items[2].numValues,
+          batlvl: res.data.t.items[6].numValues,
           
+        })
+        
+        wx.setStorage({
+          key: 'key',
+          data: 'value'
         })
         
         if (res.data.t.items[9].numValues != 0) {

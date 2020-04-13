@@ -1,13 +1,11 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index"
- 
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTextStyle": "black"
-  }
-  
-  
+  },
+  "sitemapLocation": "sitemap.json"
 }
